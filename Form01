@@ -1,0 +1,124 @@
+
+                <Window x:Class="DemoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWPF"
+        mc:Ignorable="d"
+        Title="Form1920" Height="1000" Width="500">
+    <Border Padding="10" BorderThickness="2" BorderBrush="Gray" Visibility="Visible" Margin="5,5,5,5">
+        <StackPanel>
+            <!-- Buttond on the top of UI-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnApply" Content="Apply" Grid.Column="0" Margin="0,0,5,5" Height="30" Click="btnApply_Click"/>
+                <Button x:Name="btnReset" Content="Reset" Grid.Column="1" Margin="0,0,5,5" Height="30" Click="btnReset_Click"/>
+                <Button x:Name="btnRefresh"  Content="Refresh" Grid.Column="2" Margin="0,0,5,5" Height="30" Click="btnRefresh_Click"/>
+            
+            </Grid>
+
+            <TextBlock Text="Pulse Properties" FontWeight="Bold" Margin="0,5,0,0" FontSize="15"/>
+            
+            <!-- Description -->
+            <TextBlock Text="Description" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtDesc"  Margin="0,5,0,0" Padding="5" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Status -->
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Sattus" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+                    <TextBox x:Name="txtStatus" IsReadOnly="True" Margin="0,5,5,0" Padding="5" Background="#eee"/>
+                </StackPanel>
+
+                <!-- Revision -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Revision" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+                    <TextBox x:Name="txtRev" IsReadOnly="True" Margin="5,5,0,0" Padding="5" Background="#eee"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Part Number -->
+            <TextBlock Text="Part Number" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtPart" Margin="0,5,0,0" Padding="5" IsReadOnly="True" Background="#eee"/>
+
+            <TextBlock Text="Raw Material" FontWeight="Bold" Margin="0,10,0,0" FontSize="15"/>
+
+            <!-- Raw Material -->
+            <TextBlock Text="Material" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <ComboBox x:Name="comboMaterial" Margin="0,5,0,0" Padding="5" />
+
+            <!-- Work Centers -->
+            <TextBlock Text="Manufacture Info" FontWeight="Bold" Margin="0,10,0,0" FontSize="15"/>
+            <TextBlock Text="Work Centers" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,10" />
+
+            <!-- TextBoxes -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <CheckBox x:Name="chbWeld" FontSize="15" Margin="0,0,0,2">Weld</CheckBox>
+                    <CheckBox x:Name="chbAssembly" FontSize="15" Margin="0,0,0,2">Assembly</CheckBox>
+                    <CheckBox x:Name="chbPlasma" FontSize="15" Margin="0,0,0,2">Plasma</CheckBox>
+                    <CheckBox x:Name="chbLaser" FontSize="15" Margin="0,0,0,2">Laser</CheckBox>
+                    <CheckBox x:Name="chbPurchase" FontSize="15" Margin="0,0,0,2">Purchase</CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <CheckBox x:Name="chbLathe" FontSize="15" Margin="0,0,0,2">Lathe</CheckBox>
+                    <CheckBox x:Name="chbDrill" FontSize="15" Margin="0,0,0,2">Drill</CheckBox>
+                    <CheckBox x:Name="chbFold" FontSize="15" Margin="0,0,0,2">Fold</CheckBox>
+                    <CheckBox x:Name="chbRoll" FontSize="15" Margin="0,0,0,2">Roll</CheckBox>
+                    <CheckBox x:Name="chbSaw" FontSize="15" Margin="0,0,0,2">Saw</CheckBox>
+                </StackPanel>
+            </Grid>
+
+            <!-- Length -->
+            <TextBlock Text="Length" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtLength" Margin="0,5,0,0" Padding="5" />
+
+            <!-- Mass -->
+            <TextBlock Text="Mass" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtMass" IsReadOnly="True" Margin="0,5,5,0" Padding="5" Background="#eee"/>
+
+            <!-- Finish -->
+            <TextBlock Text="Finish" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <ComboBox x:Name="comboFinish" Margin="0,5,0,0" Padding="5" SelectedIndex="0">
+                <ComboBoxItem>Painted</ComboBoxItem>
+                <ComboBoxItem>Not Painted</ComboBoxItem>
+            </ComboBox>
+            
+            <!-- Purchase information -->
+            <TextBlock Text="Purchase Information " FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <ComboBox x:Name="comboPurchase" Margin="0,5,0,0" Padding="5" />
+
+            <!-- Supplier Name -->
+            <TextBlock Text="Supplier Name" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtSuppName" Margin="0,5,0,0" Padding="5" />
+
+            <!-- Supplier Code -->
+            <TextBlock Text="Supplier Code" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtSuppCode" Margin="0,5,0,0" Padding="5" />
+
+            <TextBlock Text="Additional Info" FontWeight="Bold" Margin="0,10,0,0" FontSize="15"/>
+
+            <!-- Note -->
+            <TextBlock Text="Note" FontWeight="DemiBold" FontSize="15" Margin="0,5,0,0" />
+            <TextBox x:Name="txtNote" Margin="0,5,0,0" Padding="5" />
+            
+        </StackPanel>
+    </Border>
+</Window>
